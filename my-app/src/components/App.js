@@ -3,6 +3,15 @@ import logo from '../images/logo.svg';
 import '../styles/App.css';
 
 class App extends Component {
+  constructor(props){
+     super(props)
+     this.testFunction= this.testFunction.bind(this);
+  }
+  
+  testFunction(){
+     alert("Function Executed Successfully");
+  }
+
   render() {
     return (
       <div className="App">
@@ -10,7 +19,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
+        <p className="App-intro" onClick={this.testFunction}>
           Test {this.props.name}
         </p>
       </div>
